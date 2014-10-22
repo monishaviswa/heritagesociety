@@ -24,6 +24,7 @@ module.exports = function(grunt) {
     }
   });
 
+  //default task: compile LESS and start the file watch
   grunt.registerTask("default", ["less", "watch"]);
 
-};
+}

@@ -1,0 +1,54 @@
+/*  row  */
+.row {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  column  */
+.col {
+	display: block;
+	float: left;
+	margin-top: 1%;
+	margin-right: 0;
+	margin-bottom: 1%;
+	margin-left: 2%; /* margin-left of first col of the row is set to be 0 */
+}
+
+.col:first-child { margin-left: 0; } /* margin-left of first col of the row is set to be 0 */
+
+/*  group
+	solves floating problems,
+	by forcing the section to self clear its children (aka the clearfix hack).
+*/
+.group:before, .group:after { content:""; display:table; }
+.group:after { clear:both; }
+.group { zoom:1; } /* For IE 6/7 */
+					
+/*  grid of 12  */
+._12 { width: 100%; }
+._11 { width: 91.5%; }
+._10 { width: 83%; }
+._9 { width: 74.5%; }
+._8 { width: 66%; }
+._7 { width: 57.5%; }
+._6 { width: 49%; }
+._5 { width: 40.5%; }
+._4 { width: 32%; }
+._3 { width: 23.5%; }
+._2 { width: 15%; }
+._1 { width: 6.5%; }
+
+/*  when less than 480px, go full width */
+@media only screen and (max-width: 480px) {
+	.col { margin: 1% 0 1% 0%; }
+	._12, ._11, ._10, ._9, ._8, ._7, ._6, ._5, ._4, ._3, ._2, ._1 { width: 100%; }
+}
+
+
+
+/* main CSS starts here */
+.sample {
+	border: solid 1px;
+	position: relative;
+}
