@@ -1,32 +1,19 @@
-<?php
+<?php get_header(); ?>
+             
+<!-- START CONTENT -->
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+  
+    	<h2> <?php the_title(); ?></h2>
+        <?php the_content('More &raquo;'); ?>
+    <?php endwhile; ?>
 
-get_header();
+<?php endif; ?>
 
-if(have_posts()) : 
-	while(have_posts()) : the_post(); ?>
-		
-		<article class="post">
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<p class="post-info"><?php the_time('F jS, Y g:i a'); ?> | by <?php the_author(); ?></p>
-			
-			<?php if($post->post_excerpt) { ?>
-				<p>
-					<?php echo get_the_excerpt(); ?>
-					<a href="<?php the_permalink(); ?>">Read More&raquo;</a>
-				</p>
-			<?php } else {
-				the_content();
-			} ?>
+<!-- End CONTENT -->
 
-		</article>
 
-	<?php endwhile;
+<?php get_footer(); ?>
 
-else :
-	echo'<p>No content found</p>';
 
-endif;
 
-get_footer();
-
-?>

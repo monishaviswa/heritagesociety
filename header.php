@@ -1,27 +1,57 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+<head>
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
 
-	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<meta name="viewport" content="width=device-width">
-		<title><?php bloginfo('name'); ?></title>
-		<?php wp_head(); ?>
-	</head>
+	<title><?php wp_title(':', true, 'right'); ?><?php bloginfo('name'); ?> : <?php bloginfo('description'); ?></title>
+    
+<!-- Remy Sharp Shim --> 
+<!--[if lt IE 9]> 
+<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
+<![endif]-->    
 
-<body <?php body_class(); ?>>
-	<div class="container">
+ <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="all" />
+<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-		<!-- site-header -->
-		<header class="site-header">
-			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-			<h5><?php bloginfo('description'); ?></h5>
+<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/favicon.ico" /><!--For now random fav icon -->
 
-			<nav class="site-nav">
-				<?php
-					$args = array(
-						'theme_location' => 'primary'
-					);
-				?>
-				<?php wp_nav_menu( $args ); ?>
-			</nav>
-		</header><!-- /site-header -->
+	  <?php /*?> Always have wp_head() just before the closing </head>
+	   tag of your theme. Many plugins use this hook to add 
+       elements to <head> such as styles, scripts, and meta tags.
+	  <?php */?>
+<?php wp_head(); ?>
+</head>
+
+<!--The navigation and the logo goes inside the header -->
+<header><!--Start Of Header-->
+
+		
+<div id="logo"><!--Start Of logo div-->	
+<h1>
+<a href="<?php bloginfo('wpurl'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="BHSW logo" id="logo"/></a>
+</h1>
+</div><!--End Of logo div-->
+
+<nav>
+<?php
+$args = array(
+			'theme_location' => 'primary',
+			'container'  => 'nav',
+			);
+?>
+<?php wp_nav_menu( $args ); ?>
+</nav>
+</header><!-- End header -->
+
+<div id="wrapper"><!--Start Wrapper-->
+<div id="main"><!--Start Main-->
+
+
+
+
+
+
+
+
+
