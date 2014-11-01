@@ -4,7 +4,7 @@
 <!-- START CONTENT -->
 <div class="forms"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
 <?php
-$the_slug = 'volunteer-form';
+$the_slug = 'gallery-form';
 $args=array(
 	'name' => $the_slug,
 	'post_type' => 'post',

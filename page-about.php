@@ -2,9 +2,10 @@
 <div id="wrapper"><!--Start Wrapper-->
 <div id="main"><!--Start Main-->            
 <!-- START CONTENT -->
-<div class="forms"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
+<aside id="about"><!--This section is used to display a specific post into the aside, the post with the slug abouts goes here-->
+
 <?php
-$the_slug = 'volunteer-form';
+$the_slug = 'abouts';
 $args=array(
 	'name' => $the_slug,
 	'post_type' => 'post',
@@ -18,11 +19,13 @@ $thispost = get_posts( $args );
 	$id=getpostid($thispost);
 	}
 ?>
-<?php echo do_shortcode (get_post_field('post_content', $id)); ?>
+<h1>
+<?php echo get_the_title($id);?>
+</h1>
+<?php echo get_post_field('post_content', $id); ?>
+</aside><!--End Of Aside-->
 
-</div><!--End div form -->
-
-<div class="descriptions"><!--Start of div  descriptions-->
+<div id="officers"><!--Start of div officers-->
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
   
@@ -31,7 +34,7 @@ $thispost = get_posts( $args );
     <?php endwhile; ?>
 
 <?php endif; ?>
-</div><!--End Of div descriptions-->
+</div><!--End Of div officers-->
 
 <!-- End CONTENT -->
 

@@ -2,9 +2,10 @@
 <div id="wrapper"><!--Start Wrapper-->
 <div id="main"><!--Start Main-->            
 <!-- START CONTENT -->
-<div class="forms"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
+<?php get_sidebar( 'projects' ); ?>
+<div id="postform"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
 <?php
-$the_slug = 'volunteer-form';
+$the_slug = 'add-post';
 $args=array(
 	'name' => $the_slug,
 	'post_type' => 'post',
@@ -22,15 +23,13 @@ $thispost = get_posts( $args );
 
 </div><!--End div form -->
 
-<div class="descriptions"><!--Start of div  descriptions-->
-<?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
-  
-    	<h2> <?php the_title(); ?></h2>
-        <?php the_content('More &raquo;'); ?>
-    <?php endwhile; ?>
-
-<?php endif; ?>
+<div id="projectscontent"><!--Start of div  descriptions-->
+<?php
+query_posts('cat=4');
+while (have_posts()) : the_post();
+the_content();
+endwhile;
+?>
 </div><!--End Of div descriptions-->
 
 <!-- End CONTENT -->

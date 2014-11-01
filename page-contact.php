@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <div id="wrapper"><!--Start Wrapper-->
-<div id="main"><!--Start Main-->
-
-<div class="forms">
+<div id="main"><!--Start Main-->            
+<!-- START CONTENT -->
+<div class="forms"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
 <?php
 $the_slug = 'contact-form';
 $args=array(
@@ -31,8 +31,9 @@ $thispost = get_posts( $args );
     <?php endwhile; ?>
 
 <?php endif; ?>
-
 </div><!--End Of div descriptions-->
+
+<!-- End CONTENT -->
 
 
 <?php get_footer(); ?>

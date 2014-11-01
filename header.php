@@ -37,15 +37,14 @@
 <?php
 $args = array(
 			'theme_location' => 'primary',
-			'container'  => 'nav',
+	
 			);
 ?>
 <?php wp_nav_menu( $args ); ?>
 </nav>
 </header><!-- End header -->
 
-<div id="wrapper"><!--Start Wrapper-->
-<div id="main"><!--Start Main-->
+
 
 
 
