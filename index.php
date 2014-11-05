@@ -1,32 +1,62 @@
 <?php
+	get_header();
+?>
+<div class="row">
+	<div class="col _4">
+		<p>This is a sidebar.</p>
+	</div>
 
-get_header();
+	<div class="col _8">
+	<?php
+		if(have_posts()) : 
+			while(have_posts()) : the_post(); ?>
+				
+				<article class="post">
+					<!-- post thumbnail (image) -->
+					<?php the_post_thumbnail('small-thumbnail'); ?>
 
-if(have_posts()) : 
-	while(have_posts()) : the_post(); ?>
-		
-		<article class="post">
-			<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<p class="post-info"><?php the_time('F jS, Y g:i a'); ?> | by <?php the_author(); ?></p>
-			
-			<?php if($post->post_excerpt) { ?>
-				<p>
-					<?php echo get_the_excerpt(); ?>
-					<a href="<?php the_permalink(); ?>">Read More&raquo;</a>
-				</p>
-			<?php } else {
-				the_content();
-			} ?>
+					<!-- post title -->
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					
+					<!-- post time -->
+					<p class="post-info"><?php the_time('F jS, Y g:i a'); ?>
+					 | by <?php the_author(); ?></p>
 
-		</article>
+					<!-- post content -->
+					<p>
+						<?php the_excerpt(); ?>
+						<a href="<?php the_permalink(); ?>">Read more</a>
+					</p>
 
-	<?php endwhile;
+					<!-- categories -->
+					<p> Categories: 
+						<?php 
+							$categories = get_the_category();
+							$separator = ", ";
+							$output = '';
 
-else :
-	echo'<p>No content found</p>';
+							if($categories) {
+								foreach ($categories as $category) {
+									$output .= '<a href="' . get_category_link($category->term_id) .'">' . $category->cat_name . '</a>' . $separator;
+								}
+								//trim removes the front and end ", "
+								echo trim($output, $separator);
+							}
+						?>
+					</p>
 
-endif;
+				</article>
 
-get_footer();
+			<?php endwhile;
 
+		else :
+			echo'<p>No content found</p>';
+		endif;
+	?>
+	</div> <!-- end ._8 column -->
+
+</div> <!-- end row -->
+
+<?php
+	get_footer();
 ?>

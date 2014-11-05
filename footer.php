@@ -3,14 +3,21 @@
 			<nav class="site-nav">
 				<?php
 					$args = array(
-						'theme_location' => 'footer'
+						'theme_location' => 'footerMenu',
+						'theme_location' => 'copyrightMenu'
 					);
 				?>
 				<?php wp_nav_menu( $args ); ?>
 			</nav>
 
-			<p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y'); ?></p>
-		
+			<!--
+			<ul>
+				<li>&copy;<?php echo date('Y'); ?> <?php bloginfo('name'); ?></li>
+				<li>All Rights Reserved</li>
+				<li>Privacy Policy</li>
+			</ul>
+			-->
+
 		</footer>
 
 	</div> <!-- /container -->

@@ -1,54 +1,96 @@
-/*
-Theme Name: Test1
-Author: Danny
-Author URI: http://facebook.com/
-Version: 1.0;
+/* Grid Style */
+/* Row */
+.row {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+/* Column */
+.col {
+  display: block;
+  float: left;
+  margin-top: 1%;
+  margin-right: 0;
+  margin-bottom: 1%;
+  margin-left: 2%;
+}
+/* Overwrite the 1st column margin-left, set to be 0 */
+.col:first-child {
+  margin-left: 0;
+}
+/*  group
+	solves floating problems,
+	by forcing the section to self clear its children (aka the clearfix hack).
 */
-
-body {
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: #333;
+.group:before,
+.group:after {
+  content: "";
+  display: table;
 }
-
-a:link,
-a:visited {
-  color: #006ec3;
+.group:after {
+  clear: both;
 }
-
-p {
-  line-height: 1.5em;
+.group {
+  zoom: 1;
 }
-
-/* General Layout */
-div.container {
-  max-width: 920px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+/* For IE 6/7 */
+/*  Grids with 12 different widths */
+._12 {
+  width: 100%;
 }
-
-/* Post Layout */
-article.post {
-  border-bottom: 2px dotted #bbbbbb;
+._11 {
+  width: 91.5%;
 }
-
-article.post:last-of-type {
-  border-bottom: none;
+._10 {
+  width: 83%;
 }
-
-/* Header */
-.site-header {
-  border-bottom: 2px solid #999;
+._9 {
+  width: 74.5%;
 }
-
-/* Footer */
-.site-footer {
-  margin-top: 30px;
-  border-top: 2px solid #999;
+._8 {
+  width: 66%;
 }
-
-/* Page Layout */
-article.page h2 {
-  font-size: 300%;
+._7 {
+  width: 57.5%;
+}
+._6 {
+  width: 49%;
+}
+._5 {
+  width: 40.5%;
+}
+._4 {
+  width: 32%;
+}
+._3 {
+  width: 23.5%;
+}
+._2 {
+  width: 15%;
+}
+._1 {
+  width: 6.5%;
+}
+/*  When less than 480px, go full width */
+@media only screen and (max-width: 480px) {
+  .col {
+    margin: 1% 0 1% 0%;
+  }
+  ._12,
+  ._11,
+  ._10,
+  ._9,
+  ._8,
+  ._7,
+  ._6,
+  ._5,
+  ._4,
+  ._3,
+  ._2,
+  ._1 {
+    width: 100%;
+  }
+}
+img {
+  max-width: 100%;
 }
