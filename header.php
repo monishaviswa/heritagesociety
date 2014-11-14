@@ -44,17 +44,6 @@ $args = array(
 </nav>
 </header><!-- End header -->
 
-
-
-
-
-
-
-
-
-
-
-<<<<<<< HEAD
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width">
@@ -84,5 +73,3 @@ $args = array(
 				<?php wp_nav_menu( $args ); ?>
 			</nav>
 		</header><!-- /site-header -->
-=======
->>>>>>> origin/master
