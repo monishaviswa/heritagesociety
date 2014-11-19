@@ -1,51 +1,107 @@
 <?php get_header(); ?>
+<div id="wrapper"><!--Start Wrapper-->
+<div id="main"><!--Start Main-->            
+<!-- START CONTENT -->
+<?php if (is_page('about')) { ?><!--Start Of If 'about' -->
+<aside id="about"><!--This section is used to display a specific post into the aside, the post with the slug abouts goes here-->
 
-<div class="row">
-	<div class="col _4">
-		<div class="col _12">
-			<h2>BHS 1950s Impressions</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				Aenean commodo ligula eget dolor. Aenean massa. 
-				Cum sociis natoque penatibus et magnis dis parturient montes, 
-				nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, 
-				pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, 
-				fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, 
-				imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. 
-				Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. 
-				Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, 
-				consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, 
-				viverra quis, feugiat a, tellus. 
-				Phasellus viverra nulla ut metus varius laoreet. Q</p>
-		</div>
-
-		<div class="col _12">
-			<h2>Categories</h2>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-				Aenean commodo ligula eget dolor. Aenean massa. 
-				Cum sociis natoque penatibus e</p>
-		</div>
-	</div>
-
-	<div class="col _8">
-		<div class="col _12">
-			<?php
-			if(have_posts()) : 
-				while(have_posts()) : the_post(); ?>		
-					<article class="post page">
-						<h2><?php the_title(); ?></h2>
-						<?php the_content(); ?>
-					</article>
+<?php
+$the_post_slug = 'abouts';
+$args=array(
+	'name' => $the_post_slug,
+	'post_type' => 'post',
+	'post_status' => 'publish'
 	
-				<?php endwhile;
+);
+$thispost = get_posts( $args );
+	if( $thispost ) 
+	{
+	$id=getpostid($thispost);
+	}
+?>
+<h1>
+<?php echo get_the_title($id);?>
+</h1>
+<?php echo get_post_field('post_content', $id); ?>
+</aside><!--End Of Aside-->
 
-			else :
-				echo'<p>No content found</p>';
+<?php } else { ?><!--End of if 'About' -->
+<?php $the_post_slug =null; ?>
 
-			endif;
-			?>
+<div class="forms"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
+<?php if(is_page( 'contact' )) { ?><!--Start of if 'contact' page  -->
+<?php
+$the_post_slug = 'contact-form';
+ } 
+?><!--End of if 'contact' -->
+<?php if(is_page( 'gallery' )) { ?><!--Start of if 'Gallery' page  -->
+<?php
+$the_post_slug = 'gallery-form';
+ } 
+?><!--End of if 'Gallery' -->
+<?php if(is_page( 'membership' )) { ?><!--Start of if 'Membership' page  -->
+<?php
+$the_post_slug = 'membership-form';
+ } 
+?><!--End of if 'Membership' -->
+<?php if(is_page( 'volunteer' )) { ?><!--Start of if 'Voluteer' page  -->
+<?php
+$the_post_slug = 'volunteer-form';
+ } 
+?><!--End of if 'volunteer' -->
 
-		</div>
-	</div>
-</div> <!-- end row -->
+<!--Print the contents of the page -->
+<?php if($the_post_slug !=null) { ?><!--Print the contents if the form is available, start of If in Form--> 
+ <?php
+ $args=array(
+	'name' => $the_post_slug,
+	'post_type' => 'post',
+	'post_status' => 'publish'
+	
+);
+$thispost = get_posts( $args );
+	if( $thispost ) 
+	{
+	$id=getpostid($thispost);
+	}
+?>
+<?php echo do_shortcode (get_post_field('post_content', $id)); ?> 
+<?php } else { ?><!--End of content form if, For all other pages call the widgized sidebar -->
+<aside id="abouts"><!--start of aside-->
+<?php get_sidebar( 'projects' ); ?>
+</aside><!--End of aside-->
+<?php } ?>
+</div><!--End div form -->
+<?php } ?><!--End of else -->
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+<div id="officers"><!--Start of div officers-->
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+  
+    	<h2> <?php the_title(); ?></h2>
+        <?php the_content('More &raquo;'); ?>
+    <?php endwhile; ?>
+
+<?php endif; ?>
+</div><!--End Of div officers-->
+
+<!-- End CONTENT -->
+
 
 <?php get_footer(); ?>
