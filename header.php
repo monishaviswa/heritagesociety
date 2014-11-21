@@ -22,14 +22,16 @@
 	  <?php */?>
 <?php wp_head(); ?>
 </head>
-
+<div id="page"><!--Start Of Page Div -->
 <!--The navigation and the logo goes inside the header -->
+
 <header><!--Start Of Header-->
 
 		
 <div id="logo"><!--Start Of logo div-->	
 <h1>
-<a href="<?php bloginfo('wpurl'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/logo.png" alt="BHSW logo" id="logo"/></a>
+<a href="<?php bloginfo('wpurl'); ?>">Black Heritage Society Of Washingtion</a>
+
 </h1>
 </div><!--End Of logo div-->
 
@@ -44,32 +46,13 @@ $args = array(
 </nav>
 </header><!-- End header -->
 
-	<head>
-		<meta charset="<?php bloginfo('charset'); ?>">
-		<meta name="viewport" content="width=device-width">
-		<!-- <meta property='fb:app_id' content='a43c8b87110ddc62f24ffc3af8c853e9' /> -->
-		<title><?php bloginfo('name'); ?></title>
-		<?php wp_head(); ?>
-	</head>
-
-<body <?php body_class(); ?>>
 
 
 
 
-	<div class="container">
 
-		<!-- site-header -->
-		<header class="site-header">
-			<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-			<h5><?php bloginfo('description'); ?></h5>
 
-			<nav class="site-nav">
-				<?php
-					$args = array(
-						'theme_location' => 'headerMenu'
-					);
-				?>
-				<?php wp_nav_menu( $args ); ?>
-			</nav>
-		</header><!-- /site-header -->
+
+
+
+

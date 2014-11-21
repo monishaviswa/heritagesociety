@@ -1,4 +1,4 @@
-<aside id="left">
+
 
 	<?php if ( is_active_sidebar( 'projects' ) ) : ?>
      
@@ -10,4 +10,3 @@
 
 	<?php endif; ?>
 
-</aside>

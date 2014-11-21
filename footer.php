@@ -1,6 +1,8 @@
+</div><!-- End of div middle -->
 
-</div><!--End Of Main-->
-</div><!--End Of Wrapper-->
+
+
+<footer>
 <nav>	
 <?php
 $args = array(
@@ -9,27 +11,23 @@ $args = array(
 ?>
 <?php wp_nav_menu( $args ); ?>
 </nav>
-<footer>
 
-
-<ul>
+<ul id="bottomfooter">
 <li>
-Copyrights 2014
-</li>
-<li>
-<a href="#">
-Students SCCC
-</a>
+Copyrights2014 Blach Heritage Society
 </li>
 <li>
 All Rights Reserved
+
 </li>
+<li>
+Students SCCC
+</li>
+</ul>		
 
 
 </footer>
-
-<?php wp_footer(); ?> 
-
+</div><!--End Of Page Div -->
 <!-- begin validation buttons -->
 <p>
 <a href="http://validator.w3.org/check?uri=referer">

@@ -2,8 +2,11 @@
 <div id="wrapper"><!--Start Wrapper-->
 <div id="main"><!--Start Main-->            
 <!-- START CONTENT -->
+<aside id="left"><!--Start Of aside div-->
 <?php get_sidebar( 'projects' ); ?>
+</aside><!--End Of aside div-->
 <div id="postform"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
+
 <?php
 $the_slug = 'add-post';
 $args=array(
@@ -25,7 +28,7 @@ $thispost = get_posts( $args );
 
 <div id="projectscontent"><!--Start of div  descriptions-->
 <?php
-query_posts('cat=4');
+query_posts( array( 'category_name' => 'userpost' ) );
 while (have_posts()) : the_post();
 the_content();
 endwhile;

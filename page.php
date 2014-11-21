@@ -1,9 +1,9 @@
 <?php get_header(); ?>
-<div id="wrapper"><!--Start Wrapper-->
-<div id="main"><!--Start Main-->            
+
+<div id="middle"><!--Start Main-->            
 <!-- START CONTENT -->
 <?php if (is_page('about')) { ?><!--Start Of If 'about' -->
-<aside id="about"><!--This section is used to display a specific post into the aside, the post with the slug abouts goes here-->
+<aside id="about" class="left-col"><!--This section is used to display a specific post into the aside, the post with the slug abouts goes here-->
 
 <?php
 $the_post_slug = 'abouts';
@@ -28,13 +28,13 @@ $thispost = get_posts( $args );
 <?php } else { ?><!--End of if 'About' -->
 <?php $the_post_slug =null; ?>
 
-<div class="forms"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
+<aside id="contact" class="left-col"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
 <?php if(is_page( 'contact' )) { ?><!--Start of if 'contact' page  -->
 <?php
 $the_post_slug = 'contact-form';
  } 
 ?><!--End of if 'contact' -->
-<?php if(is_page( 'gallery' )) { ?><!--Start of if 'Gallery' page  -->
+<?php if(is_page( 'gallery-2' )) { ?><!--Start of if 'Gallery' page  -->
 <?php
 $the_post_slug = 'gallery-form';
  } 
@@ -44,7 +44,7 @@ $the_post_slug = 'gallery-form';
 $the_post_slug = 'membership-form';
  } 
 ?><!--End of if 'Membership' -->
-<?php if(is_page( 'volunteer' )) { ?><!--Start of if 'Voluteer' page  -->
+<?php if(is_page( 'membership' )) { ?><!--Start of if 'Voluteer' page  -->
 <?php
 $the_post_slug = 'volunteer-form';
  } 
@@ -71,7 +71,7 @@ $thispost = get_posts( $args );
 <?php get_sidebar( 'projects' ); ?>
 </aside><!--End of aside-->
 <?php } ?>
-</div><!--End div form -->
+</aside><!--End aside contact -->
 <?php } ?><!--End of else -->
 
 
@@ -90,7 +90,7 @@ $thispost = get_posts( $args );
 
 
 
-<div id="officers"><!--Start of div officers-->
+<div id="officers" class="right-col"><!--Start of div officers-->
 <?php if (have_posts()) : ?>
     <?php while (have_posts()) : the_post(); ?>
   
