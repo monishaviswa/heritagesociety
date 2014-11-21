@@ -2,7 +2,7 @@
 <!-- START CONTENT -->
 <div id="middle"><!-- START div middle -->
 
-<?php if ( function_exists( 'soliloquy' ) ) { soliloquy( '30' ); } ?>
+
 
 
 
