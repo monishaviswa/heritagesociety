@@ -44,7 +44,7 @@ $the_post_slug = 'gallery-form';
 $the_post_slug = 'membership-form';
  } 
 ?><!--End of if 'Membership' -->
-<?php if(is_page( 'membership' )) { ?><!--Start of if 'Voluteer' page  -->
+<?php if(is_page( 'volunteer' )) { ?><!--Start of if 'Voluteer' page  -->
 <?php
 $the_post_slug = 'volunteer-form';
  } 
