@@ -2,16 +2,9 @@
 <!-- START CONTENT -->
 <div id="middle"><!-- START div middle -->
 
-<?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
-  
-    	<h2> <?php the_title(); ?></h2>
-        <?php the_content('More &raquo;'); ?>
-    <?php endwhile; ?>
-
-<?php endif; ?>
-
-
+<div class="flexslider"><!-- START div flexslider-->
+<?php if ( function_exists( 'show_simpleresponsiveslider' ) ) show_simpleresponsiveslider(); ?>
+</div><!-- End div flexslider -->
 
 
 
@@ -20,7 +13,7 @@
 <?php
 //get 1 recent post
     $args=array(
-      'category__in' => array(5),
+      'category__in' => array(1),
       'showposts'=>1,
       'caller_get_posts'=>1
     );

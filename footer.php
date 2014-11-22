@@ -2,19 +2,23 @@
 
 
 
-<footer>
-<nav>	
+<footer id="main-footer">
+
 <?php
 $args = array(
-			'theme_location' => 'primary'
+			'theme_location' => 'primary',
+			 'container' => '',               
+			'items_wrap'      => '<ul id="topfooter">%3$s</ul>'
+			
+			                 
 			);
 ?>
 <?php wp_nav_menu( $args ); ?>
-</nav>
+
 
 <ul id="bottomfooter">
 <li>
-Copyrights2014 Blach Heritage Society
+Copyrights2014 Black Heritage Society
 </li>
 <li>
 All Rights Reserved
