@@ -13,7 +13,7 @@
 <?php
 //get 1 recent post
     $args=array(
-      'category__in' => array(1),
+      'category_name' => 'news',
       'showposts'=>1,
       'caller_get_posts'=>1
     );

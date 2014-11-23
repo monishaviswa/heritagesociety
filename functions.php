@@ -1,9 +1,5 @@
 <?php
-function learningWordPress_resources() {
-wp_enqueue_style('style', get_stylesheet_uri());
-}
 
-add_action('wp_enqueue_scripts', 'learningWordPress_resources');
 
 // Navigation Menus
 register_nav_menus(array(
@@ -44,7 +40,7 @@ function my_register_sidebars() {
 
 }
 
-add_action( 'widgets_init', 'my_register_sidebars' );
+
 
 
 
