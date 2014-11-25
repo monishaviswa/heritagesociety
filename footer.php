@@ -1,38 +1,22 @@
-</div><!-- End of div middle -->
+	<footer id="main-footer">
+		<nav>
+			<?php $args = array(
+				'theme_location' => 'primary'
+			);		
+			wp_nav_menu( $args ); ?>
+		</nav>
 
+		<ul id="bottomfooter">
+			<li>&copy;<?php echo date('Y'); ?> <?php bloginfo('name'); ?></li>
+			<li>All Rights Reserved</li>
+			<li>Students SCCC</li>
+		</ul>
 
+	</footer><!-- /main-footer -->
 
-<footer id="main-footer">
+</div><!-- /page -->
 
-<?php
-$args = array(
-			'theme_location' => 'primary',
-			 'container' => '',               
-			'items_wrap'      => '<ul id="topfooter">%3$s</ul>'
-			
-			                 
-			);
-?>
-<?php wp_nav_menu( $args ); ?>
-
-
-<ul id="bottomfooter">
-<li>
-Copyrights <?php echo date("Y") ?> Black Heritage Society
-</li>
-<li>
-All Rights Reserved
-
-</li>
-<li>
-Students SCCC
-</li>
-</ul>		
-
-
-</footer>
-</div><!--End Of Page Div -->
-
+<?php wp_footer(); ?> 
 
 </body>
 </html>
