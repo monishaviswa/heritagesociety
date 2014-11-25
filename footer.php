@@ -1,9 +1,10 @@
+</div>
+
 	<footer id="main-footer">
 		<nav>
 			<?php $args = array(
-				'theme_location' => 'primary'
-			);		
-			wp_nav_menu( $args ); ?>
+				'theme_location' => 'footer'
+			); wp_nav_menu( $args ); ?>
 		</nav>
 
 		<ul id="bottomfooter">
