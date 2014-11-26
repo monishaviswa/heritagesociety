@@ -34,10 +34,14 @@
 			</div><!-- /logo -->
 
 			<nav>
+			<label class="show-menu" for="show-menu">Show Menu</label>
+            <input id="show-menu" type="checkbox">
 				<?php $args = array(
-					'theme_location' => 'primary'
+					'theme_location' => 'primary',
+					'container' => '',
+					'items_wrap' => '<ul id="menu">%3$s</ul>'
 				);
 				wp_nav_menu( $args ); ?>
 			</nav>
-
+  
 		</header><!-- /header -->
