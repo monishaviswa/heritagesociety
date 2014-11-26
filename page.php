@@ -6,23 +6,16 @@
 <aside id="about" class="left-col"><!--This section is used to display a specific post into the aside, the post with the slug abouts goes here-->
 
 <?php
-$the_post_slug = 'abouts';
-$args=array(
-	'name' => $the_post_slug,
-	'post_type' => 'post',
-	'post_status' => 'publish'
-	
-);
-$thispost = get_posts( $args );
-	if( $thispost ) 
-	{
-	$id=getpostid($thispost);
-	}
+$the_post_slug ="abouts";
+$query = new WP_Query(array(
+	"name" => "$the_post_slug"
+));
+$thispost = $query->posts[0];
 ?>
 <h1>
-<?php echo get_the_title($id);?>
+<?php echo $thispost->post_title; ?>
 </h1>
-<?php echo get_post_field('post_content', $id); ?>
+<?php echo $thispost->post_content; ?>
 </aside><!--End Of Aside-->
 
 <?php } else { ?><!--End of if 'About' -->
@@ -53,19 +46,13 @@ $the_post_slug = 'volunteer-form';
 <!--Print the contents of the page -->
 <?php if($the_post_slug !=null) { ?><!--Print the contents if the form is available, start of If in Form--> 
  <?php
- $args=array(
-	'name' => $the_post_slug,
-	'post_type' => 'post',
-	'post_status' => 'publish'
-	
-);
-$thispost = get_posts( $args );
-	if( $thispost ) 
-	{
-	$id=getpostid($thispost);
-	}
+$query = new WP_Query(array(
+	"name" => "$the_post_slug"
+));
+$thispost = $query->posts[0];
 ?>
-<?php echo do_shortcode (get_post_field('post_content', $id)); ?> 
+
+<?php echo do_shortcode ($thispost->post_content); ?>
 <?php } else { ?><!--End of content form if, For all other pages call the widgized sidebar -->
 <aside id="abouts"><!--start of aside-->
 <?php get_sidebar( 'projects' ); ?>

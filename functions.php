@@ -72,16 +72,6 @@ add_action( 'widgets_init', 'my_register_sidebars' );
 
 
 
-/* Gets the post array and returns the ID */
-function getpostid($postslug) {
-	foreach ($postslug as $key => $value) {
-		foreach($value as $keys => $values) {
-			if($keys=="ID") {
-				$id=$values;
-			}
-		}
-	}
-	return $id;
-}
+
 
 ?>
