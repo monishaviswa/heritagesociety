@@ -37,22 +37,17 @@
 <div id="cta03" class="cta"><!--Start CT03-->
 <?php
 $the_post_slug = 'abouts';
-$args=array(
-	'name' => $the_post_slug,
-	'post_type' => 'post',
-	'post_status' => 'publish'
-	
-);
-$thispost = get_posts( $args );
-	if( $thispost ) 
-	{
-	$id=getpostid($thispost);
-	}
+$query = new WP_Query(array(
+	"name" => "$the_post_slug"
+));
+$thispost = $query->posts[0];
 ?>
 <h1>
-<?php echo get_the_title($id);?>
+<?php echo $thispost->post_title; ?>
 </h1>
-<?php echo get_post_field('post_content', $id); ?>
+<p>
+<?php echo $thispost->post_content; ?>
+</p>
 </div><!--End CT03-->
 
 
