@@ -18,7 +18,6 @@
 
 				the_post(); ?>
 
-				<div class="row">
 					<article class="col _12">
 						<!-- Post title -->
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
@@ -33,7 +32,7 @@
 						<!-- Post thumbnail -->
 						<?php the_post_thumbnail(); ?>
 					</article>
-				</div>
+				
 
 			<?php endwhile; ?>
 
