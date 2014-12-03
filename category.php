@@ -23,7 +23,7 @@
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						
 						<!-- Post time -->
-						<p><?php the_time('F j, Y'); ?></p>
+						<h3><?php the_time('F j, Y'); ?></h3>
 
 						<!-- Post description -->
 						<?php the_excerpt(); ?>
