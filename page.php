@@ -12,10 +12,12 @@ $query = new WP_Query(array(
 ));
 $thispost = $query->posts[0];
 ?>
-<h1>
+<h2>
 <?php echo $thispost->post_title; ?>
-</h1>
+</h2>
+<p>
 <?php echo $thispost->post_content; ?>
+</p>
 </aside><!--End Of Aside-->
 
 <?php } else { ?><!--End of if 'About' -->
@@ -51,8 +53,9 @@ $query = new WP_Query(array(
 ));
 $thispost = $query->posts[0];
 ?>
-
+<p>
 <?php echo do_shortcode ($thispost->post_content); ?>
+</p>
 <?php } else { ?><!--End of content form if, For all other pages call the widgized sidebar -->
 <aside id="abouts"><!--start of aside-->
 <?php get_sidebar( 'projects' ); ?>

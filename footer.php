@@ -1,11 +1,14 @@
 </div>
 
 	<footer id="main-footer">
-		<nav>
+		
 			<?php $args = array(
-				'theme_location' => 'footer'
+			
+				'container' => '',
+				'items_wrap' => '<ul id="topfooter">%3$s</ul>',
+				'theme_location' => 'primary'
 			); wp_nav_menu( $args ); ?>
-		</nav>
+		
 
 		<ul id="bottomfooter">
 			<li>&copy;<?php echo date('Y'); ?> <?php bloginfo('name'); ?></li>
