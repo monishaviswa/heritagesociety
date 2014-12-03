@@ -213,6 +213,11 @@ input[type=checkbox]:checked + #menu{
 	color:#697f49;
 	margin-bottom:10px;
 }
+.right-col h2 a{
+	color:#697f49;
+	text-decoration:none;
+	font-size:18px;
+}
 
 .right-col h2 {
 	font-size:18px;
