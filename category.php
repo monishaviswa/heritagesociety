@@ -26,8 +26,10 @@
 						<h3><?php the_time('F j, Y'); ?></h3>
 
 						<!-- Post description -->
+						<p class="rdmore">
 						<?php the_excerpt(); ?>
-						<p><a href="<?php the_permalink(); ?>">Read More</a></p>
+						<a href="<?php the_permalink(); ?>">Read More</a>
+						</p>
 
 						<!-- Post thumbnail -->
 						<?php the_post_thumbnail(); ?>
