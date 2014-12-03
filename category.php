@@ -1,16 +1,17 @@
 <?php get_header(); ?>
 
-<div class="site-content row">
+<div id="middle">
+<aside id="news" class="left-col">
 
-	<!-- Sidebar, left, width=4 -->
+	
 	<?php if ( is_active_sidebar( 'news-sidebar' ) ) : ?>
-		<div class="news-sidebar col _4">
+		
 			<ul><?php dynamic_sidebar( 'news-sidebar' ); ?></ul>
-		</div>
+		
 	<?php endif; ?>
-
+</aside>
 	<!-- News posts, right, width=8 -->
-	<div class="post-area col _8">
+<div id="post" class="right-col">
 
 		<?php if (have_posts()) :
 			while (have_posts()) :
@@ -47,6 +48,6 @@
 
 	</div>
 
-</div> <!-- /site-content -->
+</div> <!--div middle -->
 
 <?php get_footer(); ?>
