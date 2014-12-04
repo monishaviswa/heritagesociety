@@ -3,7 +3,12 @@
            
 <!-- START CONTENT -->
 <aside id="news" class="left-col"><!--Start Of aside div-->
-<?php get_sidebar( 'projects' ); ?>
+<?php if ( is_active_sidebar( 'Projects' ) ) : ?>
+		<div class="news-sidebar col _4">
+			<?php dynamic_sidebar( 'Projects' ); ?>
+		</div>
+	<?php endif; ?>
+
 </aside><!--End Of aside div-->
 <aside id="contact"><!--This section is used to display a specific post into the aside, the post with the slug membership-form goes here-->
 

@@ -21,14 +21,21 @@
     if( $my_query->have_posts() ) {
      
       while ($my_query->have_posts()) : $my_query->the_post(); ?>
-        <p><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a>
-		 <?php the_content('More &raquo;'); ?>
-		</p>
-       <?php
-      endwhile;
-    } //if ($my_query)
-  wp_reset_query();  // Restore global post data stomped by the_post().
-?>
+      <h2><?php the_title(); ?></h2>
+	  <h3><?php the_time('F j, Y'); ?></h3>
+        
+       <?php the_excerpt(); ?>
+       <p class="rdmore">
+       <a href="<?php echo site_url(); ?>/news">Read More</a>
+       </p>
+	        <?php endwhile; ?>
+      
+	 
+    <?php }  ?>  
+  
+
+
+
 </div><!--End CT01-->
 
 <div id="cta02" class="cta"><!--Start CT02-->
@@ -36,18 +43,27 @@
 
 <div id="cta03" class="cta"><!--Start CT03-->
 <?php
-$the_post_slug = 'abouts';
-$query = new WP_Query(array(
-	"name" => "$the_post_slug"
-));
-$thispost = $query->posts[0];
-?>
-<h1>
-<?php echo $thispost->post_title; ?>
-</h1>
-<p>
-<?php echo $thispost->post_content; ?>
-</p>
+//get 1 recent post
+    $args=array(
+      'category_name' => 'aboutpost',
+      'showposts'=>1,
+      'caller_get_posts'=>1
+    );
+    $my_query = new WP_Query($args);
+    if( $my_query->have_posts() ) {
+     
+      while ($my_query->have_posts()) : $my_query->the_post(); ?>
+      <h2><?php the_title(); ?></h2>
+	  <h3><?php the_time('F j, Y'); ?></h3>
+        
+       <?php the_excerpt(); ?>
+       <p class="rdmore">
+       <a href="<?php echo site_url(); ?>/about">Read More</a>
+       </p>
+	        <?php endwhile; ?>
+      
+	 
+    <?php }  ?>  
 </div><!--End CT03-->
 
 

@@ -18,7 +18,7 @@ add_action('after_setup_theme', 'my_setup');
 
 // Customize excerpt word count length
 function custom_excerpt_length() {
-	return 25;
+	return 35;
 }
 add_filter('excerpt_length', 'custom_excerpt_length');
 
@@ -59,6 +59,16 @@ function my_register_sidebars() {
 	register_sidebar( array(
 		'name'			=> 'news sidebar',
 		'id'			=> 'news-sidebar',
+		'description'	=> '',
+		'class'			=> '',
+		'before_widget'	=> '',
+		'after_widget'	=> '',
+		'before_title'	=> '<h2>',
+		'after_title'	=> '</h2>'
+	));
+	register_sidebar( array(
+		'name'			=> 'Single Sidebar',
+		'id'			=> 'Single-sidebar',
 		'description'	=> '',
 		'class'			=> '',
 		'before_widget'	=> '',
