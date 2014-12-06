@@ -4,12 +4,12 @@
 <div id="middle">
 <!-- Beginning of Aside -->
 <aside id="news" class="left-col">
-<?php if ( is_active_sidebar( 'single-sidebar' ) ) : ?>
+<?php if ( is_active_sidebar( 'singles' ) ) : ?>
 		<div class="news-sidebar col _4">
-			<?php dynamic_sidebar( 'single-sidebar' ); ?>
+			<?php dynamic_sidebar( 'singles' ); ?>
 		</div>
 	<?php endif; ?>
-this is a test
+
 </aside>
 	<?php if(have_posts()) :  ?>
 	<?php 	while(have_posts()) : the_post(); ?>

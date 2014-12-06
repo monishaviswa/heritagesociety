@@ -26,7 +26,7 @@
         
        <?php the_excerpt(); ?>
        <p class="rdmore">
-       <a href="<?php echo site_url(); ?>/news">Read More</a>
+       <a href="<?php echo site_url(); ?>/category/news/">Read More</a>
        </p>
 	        <?php endwhile; ?>
       
@@ -39,6 +39,12 @@
 </div><!--End CT01-->
 
 <div id="cta02" class="cta"><!--Start CT02-->
+<?php if ( is_active_sidebar( 'Events' ) ) : ?>
+		<div class="news-sidebar col _4">
+			<?php dynamic_sidebar( 'Events' ); ?>
+		</div>
+	<?php endif; ?>
+
 </div><!--End CT02-->
 
 <div id="cta03" class="cta"><!--Start CT03-->

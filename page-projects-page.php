@@ -30,14 +30,15 @@ query_posts( array( 'category_name' => 'userpost' ) );
 while (have_posts()) : the_post();
 ?>
 <h2>
-<?php echo get_the_title(); ?>
-</h2>
+<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
 <?php the_date('F m,Y', '<h3>', '</h3>'); ?>
 
 
-<?php the_content(); ?>
-
+<?php the_excerpt(); ?>
+<p class="rdmore">
+<a href="<?php the_permalink(); ?>">Read More</a>
+</p>
 <?php endwhile; ?>
 
 </div><!--End Of div post-->

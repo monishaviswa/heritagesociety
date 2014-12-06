@@ -29,7 +29,7 @@ $thispost = $query->posts[0];
 $the_post_slug = 'contact-form';
  } 
 ?><!--End of if 'contact' -->
-<?php if(is_page( 'gallery-2' )) { ?><!--Start of if 'Gallery' page  -->
+<?php if(is_page( 'gallery-page' )) { ?><!--Start of if 'Gallery' page  -->
 <?php
 $the_post_slug = 'gallery-form';
  } 
@@ -58,7 +58,13 @@ $thispost = $query->posts[0];
 </p>
 <?php } else { ?><!--End of content form if, For all other pages call the widgized sidebar -->
 <aside id="abouts"><!--start of aside-->
-<?php get_sidebar( 'projects' ); ?>
+<?php if ( is_active_sidebar( 'Projects' ) ) : ?>
+		<div class="news-sidebar col _4">
+			<?php dynamic_sidebar( 'Projects' ); ?>
+		</div>
+	<?php endif; ?>
+
+
 </aside><!--End of aside-->
 <?php } ?>
 </aside><!--End aside contact -->

@@ -16,7 +16,7 @@ body {
 }
 
 #page {
-	margin:20px auto;
+	margin:0 auto;
 }
 
 header {
@@ -38,7 +38,6 @@ header h1 a {
 }
 
 #logo{	
-	border-top:5px solid #fff;
 	border-bottom:5px solid #fff;
 }
 
@@ -139,6 +138,7 @@ input[type=checkbox]:checked + #menu{
 	margin-bottom:10px;
 	float:left;
 	padding:1%;
+	height:295px;
 }
 
 .cta h2 a{
@@ -168,6 +168,7 @@ input[type=checkbox]:checked + #menu{
 	font-style:italic;
 	font-size:14px;
 	color:black;
+	text-transform:lowercase;
 }
 
 .rdmore a:hover, a:focus {
@@ -213,14 +214,19 @@ input[type=checkbox]:checked + #menu{
 	color:#697f49;
 	margin-bottom:10px;
 }
-.right-col h2 a{
-	color:#697f49;
-	text-decoration:none;
-	font-size:18px;
-}
 
 .right-col h2 {
 	font-size:18px;
+}
+
+.right-col h2 a {
+	text-decoration:none;
+	color:#697f49;
+}
+
+.right-col h2 a:hover, a:focus {
+	color:#354025;
+	/*color:#797f70;*/
 }
 
 .right-col p {
@@ -252,6 +258,19 @@ input[type=checkbox]:checked + #menu{
 	margin:20px 20px 10px 0;
 	list-style-type:none;
 	color:white;
+	position:relative;
+}
+
+#main-footer ul li ul {
+	position:absolute;
+}
+
+#main-footer ul li ul li {
+	text-align:left;
+}
+
+#main-footer ul li ul li a {
+	display:block;
 }
 
 #main-footer li a {
@@ -264,8 +283,12 @@ input[type=checkbox]:checked + #menu{
 }
 
 #topfooter li {
-	display:inline;
 	text-align:center;
+}
+
+#bottomfooter {
+	clear:both;
+	margin-top:110px;
 }
 
 /*about page css -------------------- */
@@ -278,7 +301,8 @@ input[type=checkbox]:checked + #menu{
 }
 
 /*contact page css -------------------- */
-#questions {
+#contact textarea {
+	width:100% !important;
 }
 
 /*news page css ----------------------- */
@@ -307,26 +331,66 @@ input[type=checkbox]:checked + #menu{
 	float:none;
 }
 
-/*dropdown footer menu css ------------------- */
-.container {
-	position:relative;
+/*memberships page css-----------------------*/
+table {
+	border-spacing:10px 5px;
 }
 
-.submenu {
-	float:left;
-	position:absolute;
-	left:0px;
+.membership ul li {
+	list-style-type:none;
 }
 
-.submenu li a {
-	display:block;
+.membership {
+	margin-left:1%;
 }
 
-#bottomfooter {
-	clear:both;
-	margin-top:135px;
+table tr th {
+	text-align:left;
 }
 
+#form label {
+	margin-bottom:5px;
+}
+
+/*events-list css--------------------*/
+.event-post {
+	overflow:hidden;
+	padding:1%;
+}
+
+.events {
+	background:#ecdbbf;
+}
+
+#post h2 {
+	color:#697f49;
+}
+
+/*part of the events plugin css on home page*/
+.entry-title a {
+	text-decoration:none;
+	color:#697f49;
+}
+
+.entry-title a:hover, a:focus {
+	color:#354025;
+}
+
+/*facebook icon and donate button css---*/
+#logo a img {
+	float:right;
+	width:40px;
+}
+
+#logo form {
+	float:right;
+	margin-right:15px;
+	margin-top:10px;
+}
+
+#logo {
+	padding:1%;
+}
 /*media queries --------------- */
 @media only screen and (min-width:1025px) and (max-width:1224px) {
 	#middle{

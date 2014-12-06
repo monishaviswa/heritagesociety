@@ -25,14 +25,18 @@
 	<div id="page">
 
 		<header>
-			
+			 
 			<div id="logo">
+                     
+                     <a href="https://www.facebook.com/"><img alt="BHSWA logo" src="<?php bloginfo('template_directory'); ?>/images/facebook.jpg"></a>
+
+                     <?php echo do_shortcode( '[paypal-donation]' ) ?>
 				<!-- site logo, hard coded -->
-				<img alt="BHSWA logo" src="<?php bloginfo('template_directory'); ?>/folder-name/image-name.jpg">
+				<!--<img alt="BHSWA logo" src="<?php bloginfo('template_directory'); ?>/folder-name/image-name.jpg"> -->
 				<!-- site name -->
 				<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 			</div><!-- /logo -->
-
+            
 			<nav>
 			<label class="show-menu" for="show-menu">Show Menu</label>
             <input id="show-menu" type="checkbox">
