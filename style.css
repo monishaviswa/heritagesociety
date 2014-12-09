@@ -255,14 +255,11 @@ input[type=checkbox]:checked + #menu{
 
 #main-footer ul li {
 	display:inline;
-	margin:20px 20px 10px 0;
 	list-style-type:none;
 	color:white;
-	position:relative;
-}
-
-#main-footer ul li ul {
-	position:absolute;
+	width:140px;
+	float:left;
+	margin:0 35px 5px 5px;
 }
 
 #main-footer ul li ul li {
@@ -286,9 +283,27 @@ input[type=checkbox]:checked + #menu{
 	text-align:center;
 }
 
-#bottomfooter {
+
+
+#bottomfooter{
+    width:80%;
+    margin:0 auto;
 	clear:both;
-	margin-top:110px;
+	overflow:hidden;
+}
+
+
+#bottomfooter ul {
+ display:block;
+ width:100%;
+ margin-top:5%;
+
+}
+
+#bottomfooter ul li {
+	width:33%;
+	margin:0 auto;
+	
 }
 
 /*about page css -------------------- */

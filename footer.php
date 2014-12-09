@@ -10,11 +10,13 @@
 			); wp_nav_menu( $args ); ?>
 		
 
-		<ul id="bottomfooter">
+<div id="bottomfooter">		
+<ul>
 			<li>&copy;<?php echo date('Y'); ?> <?php bloginfo('name'); ?></li>
 			<li>All Rights Reserved</li>
 			<li>Students SCCC</li>
 		</ul>
+</div>
 
 	</footer><!-- /main-footer -->
 
