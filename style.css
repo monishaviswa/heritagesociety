@@ -151,6 +151,9 @@ input[type=checkbox]:checked + #menu{
 }
 .cta h2, h3 {
 	color:#697f49;
+	border-bottom: 1px solid #808080;
+	margin-bottom: 10px;
+	padding-bottom: 2%;
 }
 
 .cta p {
