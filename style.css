@@ -151,10 +151,31 @@ input[type=checkbox]:checked + #menu{
 }
 .cta h2, h3 {
 	color:#697f49;
+	
+}
+
+#cta01 h2 {
 	border-bottom: 1px solid #808080;
 	margin-bottom: 10px;
 	padding-bottom: 2%;
+	
 }
+
+#cta02 h3 {
+	border-bottom: 1px solid #808080;
+	margin-bottom: 10px;
+	padding-bottom: 2%;
+	
+}
+
+
+#cta03 h2 {
+	border-bottom: 1px solid #808080;
+	margin-bottom: 10px;
+	padding-bottom: 2%;
+	
+}
+
 
 .cta p {
 	font-size:0.85em;
